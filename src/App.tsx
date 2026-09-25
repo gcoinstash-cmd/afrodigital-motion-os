@@ -466,7 +466,7 @@ export default function App() {
 
   // Listen to /admin route on load
   useEffect(() => {
-    if (window.location.pathname === '/admin' || window.location.hash === '#admin') {
+    if ((window.location.pathname.includes('admin') || window.location.hash.includes('admin')) || window.location.hash === '#admin') {
       setIsAdminOpen(true);
     }
   }, []);
@@ -500,3 +500,6 @@ export default function App() {
     </div>
   );
 }
+
+{/* Hidden anchor targets for crawler navigation */}
+<div id="about" className="sr-only" />
